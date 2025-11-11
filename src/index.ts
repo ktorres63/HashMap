@@ -1,23 +1,31 @@
 import { HashMap } from "./HashMap.ts"; 
 
-const map = new HashMap();
+const test = new HashMap() // or HashMap() if using a factory
 
-map.set("apple", "red");
-map.set("banana", "yellow");
-map.set("apple", "green"); 
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('carrot', 'orange')
+test.set('dog', 'brown')
+test.set('elephant', 'gray')
+test.set('frog', 'green')
+test.set('grape', 'purple')
+test.set('hat', 'black')
+test.set('ice cream', 'white')
+test.set('jacket', 'blue')
+test.set('kite', 'pink')
+test.set('lion', 'golden')
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('carrot', 'orange')
+test.set('dog', 'brown')
+test.set('elephant', 'gray')
+test.set('frog', 'green')
+test.set('grape', 'purple')
+test.set('hat', 'black')
+test.set('ice cream', 'white')
+test.set('jacket', 'blue')
+test.set('kite', 'pink')
+test.set('lion', 'golden')
 
-// Probar get()
-console.log("apple:", map.get("apple"));   // ✅ "green"
-console.log("banana:", map.get("banana")); // ✅ "yellow"
-console.log("carrot:", map.get("carrot")); // ✅ null
-
-console.log( map.has("apple"));
-console.log( map.remove("apple"));
-console.log("apple:", map.get("apple"));   
-
-console.log( map.length());
-
-
-console.log("Buckets:", map);
-map.clear()
-console.log("Buckets:", map);
+console.log(test);
+console.log(test.entries());

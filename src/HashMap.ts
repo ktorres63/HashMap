@@ -60,20 +60,50 @@ export class HashMap {
     const bucket = this.buckets[index];
     for (let i = 0; i < bucket.length; i++) {
       const pair = bucket[i]
-      if(pair[0] == key){
-        bucket.splice(i,1)
-        this.size --
+      if (pair[0] == key) {
+        bucket.splice(i, 1)
+        this.size--
         return true
       }
     }
     return false
   }
-  length():number{
+  length(): number {
     return this.size
   }
-  clear():void{
+  clear(): void {
     this.buckets = Array.from({ length: this.capacity }, () => [])
     this.size = 0
+  }
+  keys(): string[] {
+    const keys: string[] = [];
+
+    for (const bucket of this.buckets) {
+      for (const [key] of bucket) {
+        keys.push(key);
+      }
+    }
+
+    return keys;
+  }
+  values(): unknown[] {
+    const values: unknown[] = [];
+
+    for (const bucket of this.buckets) {
+      for (const [, value] of bucket) {
+        values.push(value);
+      }
+    }
+    return values;
+  }
+  entries(): Array<[string, unknown]> {
+    const pairs: Array<[string, unknown]> = [];
+    for (const bucket of this.buckets) {
+      for (const [key,value] of bucket) {
+        pairs.push([key,value]);
+      }
+    }
+    return pairs
   }
 
 }
